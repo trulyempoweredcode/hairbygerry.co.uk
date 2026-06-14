@@ -142,21 +142,33 @@ h3 em,
    --------------------------------------------- */
 .nav--transparent-dark .btn--primary,
 .hero--showcase-dark .btn--primary,
+.hero--image .btn--primary,
 .btn--accent {
   color: var(--color-text-heading);
 }
 .nav--transparent-dark .btn--primary:hover,
 .hero--showcase-dark .btn--primary:hover,
+.hero--image .btn--primary:hover,
 .btn--accent:hover {
   background-color: var(--color-secondary-light);
   border-color: var(--color-secondary-light);
   color: var(--color-text-heading);
 }
 
-/* Hero showcase: breathing room between the tick-points and the buttons
+/* Hero: breathing room between the tick-points and the buttons
    (the ticks sit directly above the actions and were cramped). */
-.hero--showcase .hero__ticks {
+.hero--showcase .hero__ticks,
+.hero--image .hero__ticks {
   margin-bottom: var(--space-lg);
+}
+
+/* Image-overlay-right hero: the left of the photo stays clear, fading into a
+   forest overlay on the right so the right-aligned text reads cleanly. A soft
+   top vignette keeps the transparent nav legible across the top. */
+.hero--image-right::before {
+  background:
+    linear-gradient(to bottom, rgba(26, 48, 40, 0.45) 0%, rgba(26, 48, 40, 0) 24%),
+    linear-gradient(105deg, rgba(26, 48, 40, 0) 0%, rgba(26, 48, 40, 0) 36%, rgba(26, 48, 40, 0.55) 66%, rgba(26, 48, 40, 0.86) 100%);
 }
 
 /* Products / accreditation logo bar — keep brand logos tidy and tonal */
