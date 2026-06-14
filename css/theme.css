@@ -168,7 +168,29 @@ h3 em,
 .hero--image-right::before {
   background:
     linear-gradient(to bottom, rgba(26, 48, 40, 0.45) 0%, rgba(26, 48, 40, 0) 24%),
-    linear-gradient(105deg, rgba(26, 48, 40, 0) 0%, rgba(26, 48, 40, 0) 36%, rgba(26, 48, 40, 0.55) 66%, rgba(26, 48, 40, 0.86) 100%);
+    linear-gradient(100deg, rgba(26, 48, 40, 0) 0%, rgba(26, 48, 40, 0) 14%, rgba(26, 48, 40, 0.45) 32%, rgba(26, 48, 40, 0.74) 56%, rgba(26, 48, 40, 0.9) 100%);
+}
+
+/* Hero heading emphasis: teal -> pink gradient text (client request), hero only */
+.hero__heading em {
+  background: linear-gradient(90deg, #33d9e3 0%, #ff9da6 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: #ff9da6;
+}
+
+/* Widen the image-right hero so the heading + the 3 tick-pills sit on tidy rows */
+@media (min-width: 768px) {
+  .hero--image-right .hero__content { max-width: 860px; }
+  .hero--image .hero__heading { font-size: 3rem; }
+  .hero--image .hero__ticks { flex-wrap: nowrap; }
+}
+
+/* Full-bleed split images sit edge-to-edge: square corners, no drop shadow */
+.split--bleed .split__image {
+  border-radius: 0;
+  box-shadow: none;
 }
 
 /* Products / accreditation logo bar — keep brand logos tidy and tonal */
