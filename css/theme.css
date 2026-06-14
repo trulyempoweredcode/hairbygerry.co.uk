@@ -1,0 +1,154 @@
+/* =============================================
+   THEME: Forest & Brass  —  Hair by Gerry
+   Creative-colour studio with a retro-glam soul.
+   Deep forest green + antique brass + plum spark on warm cream.
+   The chrome stays elegant; Gerry's colour work supplies the colour.
+   Font Pairing: Cormorant Garamond + Source Sans 3
+   Aesthetic: Luxe (20px corners, deep soft shadows)
+   ============================================= */
+
+/* --- Google Fonts --- */
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Source+Sans+3:wght@400;500;600;700&display=swap');
+
+/* --- Theme Variables --- */
+:root {
+  /* Colour Palette — forest anchor, brass fine-detail, plum spark */
+  --color-primary: #2D4A3E;
+  --color-primary-light: #3D6655;
+  --color-primary-dark: #1A3028;
+  --color-secondary: #B8860B;        /* antique brass — decorative use (hairlines, icons, borders) */
+  --color-secondary-light: #D4A832;
+  --color-secondary-dark: #8B6508;   /* darker brass — safe for large text / emphasis */
+  --color-accent: #6B3A5D;           /* plum spark — nods to his pink/purple colour work */
+  --color-accent-light: #8E5580;
+
+  --color-bg: #FAFAF7;               /* warm cream — never flat white */
+  --color-bg-alt: #F0EFE8;
+  --color-bg-dark: #1A3028;
+  --color-surface: #FFFFFF;
+  --color-surface-alt: #F7F6F0;
+
+  --color-text: #2C2C2C;
+  --color-text-light: #5C5C5C;
+  --color-text-inverse: #FAFAF7;
+  --color-text-heading: #1A1A1A;
+
+  --color-border: #DDD8CC;
+  --color-border-light: #EBE8E0;
+
+  --color-success: #2D6A4F;
+  --color-error: #B33A3A;
+
+  /* Typography */
+  --font-heading: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
+  --font-body: 'Source Sans 3', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+
+  /* Sizing overrides — Cormorant Garamond renders small, so scale headings up */
+  --text-h1-desktop: 3.4rem;
+  --text-h2-desktop: 2.5rem;
+  --text-h3-desktop: 1.75rem;
+
+  /* Aesthetic dials — Luxe preset */
+  --aesthetic-radius: 20px;
+  --aesthetic-shadow-card: 0 8px 32px rgba(26, 48, 40, 0.10), 0 2px 6px rgba(26, 48, 40, 0.05);
+  --aesthetic-border-width: 1px;
+}
+
+/* ---------------------------------------------
+   DECORATIVE LAYER — small touches, big premium signal
+   --------------------------------------------- */
+
+/* Hero text stays crisp over full-vibrancy colour photos */
+.hero__heading,
+.hero__text {
+  text-shadow: 0 1px 6px rgba(26, 48, 40, 0.45);
+}
+
+/* Italic-serif emphasis on key words in headings, tinted brass.
+   Large-text only, so brass passes AA contrast. Use <em> in headings. */
+h1 em,
+h2 em,
+h3 em,
+.hero__heading em,
+.page-header h1 em {
+  font-style: italic;
+  font-weight: 600;
+  color: var(--color-secondary-dark);
+}
+
+/* Eyebrow labels — refined letter-spacing + a short brass hairline flourish */
+.section-label {
+  letter-spacing: 0.16em;
+  font-weight: 600;
+}
+.section-label::after {
+  content: "";
+  display: block;
+  width: 40px;
+  height: 2px;
+  margin-top: 0.55em;
+  background: linear-gradient(90deg, var(--color-secondary), var(--color-secondary-light));
+  border-radius: 2px;
+}
+/* Centre the hairline when the label sits in a centred block */
+.text-center .section-label::after,
+.hero__content[style*="center"] .section-label::after {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Pull-quote / blockquote — larger, softer, on-brand */
+.blockquote {
+  border-radius: var(--aesthetic-radius);
+}
+.blockquote__text {
+  font-size: var(--text-3xl);
+  font-style: italic;
+}
+
+/* Gallery — luxe rounded frames + a refined hover lift on top of the
+   component's built-in zoom (motion reads as quality) */
+.gallery__item {
+  border-radius: var(--aesthetic-radius);
+  box-shadow: var(--aesthetic-shadow-card);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+.gallery__item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 40px rgba(26, 48, 40, 0.16);
+}
+
+/* Section-label / link accents pick up brass on hover */
+.card__link:hover,
+.footer__link:hover {
+  color: var(--color-secondary-dark);
+}
+
+/* Portrait images a touch taller on desktop so single-figure shots read well */
+@media (min-width: 768px) {
+  .intro__image-wrap {
+    min-height: 560px;
+  }
+}
+
+/* ---------------------------------------------
+   ACCESSIBILITY — gold/brass CTA contrast
+   The brass fill (#B8860B) + cream text is only 3.1:1 (fails WCAG AA).
+   These three contexts fill the CTA with brass: the transparent-dark
+   homepage nav, the showcase hero, and the cta-banner accent button.
+   Give them charcoal text (5.5:1) and BRIGHTEN on hover (lighter gold,
+   8:1) instead of darkening — classic luxe gold-with-dark-label, and
+   contrast holds in both states.
+   --------------------------------------------- */
+.nav--transparent-dark .btn--primary,
+.hero--showcase-dark .btn--primary,
+.btn--accent {
+  color: var(--color-text-heading);
+}
+.nav--transparent-dark .btn--primary:hover,
+.hero--showcase-dark .btn--primary:hover,
+.btn--accent:hover {
+  background-color: var(--color-secondary-light);
+  border-color: var(--color-secondary-light);
+  color: var(--color-text-heading);
+}

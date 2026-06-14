@@ -1,0 +1,6 @@
+# Internal / build artefacts — never publish to the client site repo
+client-brief.md
+.claude/
+images.json
+*.DS_Store
+Thumbs.db
