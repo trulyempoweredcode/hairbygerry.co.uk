@@ -165,3 +165,23 @@ h3 em,
   width: auto;
   opacity: 0.85;
 }
+
+/* Nav logo mark (placeholder monogram until the real logo lands) */
+.nav__logo {
+  max-height: 44px;
+  border-radius: 9px;
+}
+
+/* Pill eyebrow on image page-headers: drop the decorative hairline so the
+   white pill reads as one clean element (the ::after looked like a stray bar). */
+.page-header--image .section-label::after { display: none; }
+
+/* Price figures read in the clean sans body face, not the display serif */
+.treatment-list__price { font-family: var(--font-body); }
+
+/* Pricing accordions: tidy the category triggers + price rows inside them */
+.pricing-accordion .accordion__trigger {
+  font-family: var(--font-heading);
+  font-size: var(--text-xl);
+}
+.pricing-accordion .treatment-list { margin-top: var(--space-sm); }

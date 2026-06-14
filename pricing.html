@@ -65,10 +65,12 @@
   <!-- SECTION: nav -->
   <nav class="nav" role="navigation" aria-label="Main navigation">
     <div class="container nav__inner">
-      <a href="index.html" class="nav__brand">
-        <!-- PROFILE:logo --><!-- /PROFILE:logo -->
-        <span class="nav__name"><!-- PROFILE:site_title -->Hair by Gerry<!-- /PROFILE:site_title --></span>
-        <span class="nav__title"><!-- PROFILE:site_slogan -->East Dulwich Hair &amp; Colour<!-- /PROFILE:site_slogan --></span>
+      <a href="index.html" class="nav__brand nav__brand--inline">
+        <!-- PROFILE:logo --><img src="images/logo-mark.png" class="nav__logo" alt="Hair by Gerry logo"><!-- /PROFILE:logo -->
+        <div class="nav__brand-text">
+          <span class="nav__name"><!-- PROFILE:site_title -->Hair by Gerry<!-- /PROFILE:site_title --></span>
+          <span class="nav__title"><!-- PROFILE:site_slogan -->East Dulwich Hair &amp; Colour<!-- /PROFILE:site_slogan --></span>
+        </div>
       </a>
       <div class="nav__links">
         <a href="index.html" class="nav__link">Home</a>
@@ -76,6 +78,7 @@
         <a href="services.html" class="nav__link">Services</a>
         <a href="gallery.html" class="nav__link">Gallery</a>
         <a href="pricing.html" class="nav__link nav__link--active">Pricing</a>
+        <a href="reviews.html" class="nav__link">Reviews</a>
         <a href="contact.html" class="nav__link">Contact</a>
         <a href="https://hairbygerry.mytreatwell.co.uk/" onclick="if(window.wahanda){wahanda.openOnlineBookingWidget('https://widget.treatwell.co.uk/place/380106/menu/');return false;}" class="btn btn--primary nav__cta" target="_blank" rel="noopener">Book Online</a>
       </div>
@@ -91,6 +94,7 @@
       <a href="services.html" class="nav__link" role="menuitem">Services</a>
       <a href="gallery.html" class="nav__link" role="menuitem">Gallery</a>
       <a href="pricing.html" class="nav__link nav__link--active" role="menuitem">Pricing</a>
+        <a href="reviews.html" class="nav__link" role="menuitem">Reviews</a>
       <a href="contact.html" class="nav__link" role="menuitem">Contact</a>
       <a href="https://hairbygerry.mytreatwell.co.uk/" onclick="if(window.wahanda){wahanda.openOnlineBookingWidget('https://widget.treatwell.co.uk/place/380106/menu/');return false;}" class="btn btn--primary" role="menuitem" target="_blank" rel="noopener">Book Online</a>
     </div>
@@ -140,8 +144,14 @@
           <p class="section-subtitle">Gerry works with organic, mineral-based colour alongside Wella and L'Oréal. Every figure is a starting "from" price &mdash; longer, thicker or more complex hair may be a little more, which is always agreed with you first at your free consultation.</p>
         </div>
 
-        <h2 style="margin-top: var(--space-2xl);">Colour &amp; Highlights</h2>
-        <div class="treatment-list">
+        <div class="accordion pricing-accordion">
+        <div class="accordion__item accordion__item--open">
+          <button class="accordion__trigger" aria-expanded="true">
+            Colour &amp; Highlights
+            <svg class="accordion__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><line class="accordion__icon-vertical" x1="12" y1="5" x2="12" y2="19"></line></svg>
+          </button>
+          <div class="accordion__content">
+            <div class="treatment-list">
           <div class="treatment-list__item">
             <div class="treatment-list__head">
               <h3 class="treatment-list__title">Regrowth Tint</h3>
@@ -185,9 +195,15 @@
             <p class="treatment-list__summary">Hand-painted, lived-in colour with soft regrowth, created using gentle mineral-based products and finished with a blow-dry.</p>
           </div>
         </div>
-
-        <h2 style="margin-top: var(--space-2xl);">Ladies' Cuts &amp; Hairdressing</h2>
-        <div class="treatment-list">
+          </div>
+        </div>
+        <div class="accordion__item">
+          <button class="accordion__trigger" aria-expanded="false">
+            Ladies' Cuts &amp; Hairdressing
+            <svg class="accordion__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><line class="accordion__icon-vertical" x1="12" y1="5" x2="12" y2="19"></line></svg>
+          </button>
+          <div class="accordion__content">
+            <div class="treatment-list">
           <div class="treatment-list__item">
             <div class="treatment-list__head">
               <h3 class="treatment-list__title">Wash &amp; Haircut &ndash; Restyle</h3>
@@ -217,9 +233,15 @@
             <p class="treatment-list__summary">A smooth, salon-quality finish for an occasion or simply to feel your best.</p>
           </div>
         </div>
-
-        <h2 style="margin-top: var(--space-2xl);">Children</h2>
-        <div class="treatment-list">
+          </div>
+        </div>
+        <div class="accordion__item">
+          <button class="accordion__trigger" aria-expanded="false">
+            Children
+            <svg class="accordion__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><line class="accordion__icon-vertical" x1="12" y1="5" x2="12" y2="19"></line></svg>
+          </button>
+          <div class="accordion__content">
+            <div class="treatment-list">
           <div class="treatment-list__item">
             <div class="treatment-list__head">
               <h3 class="treatment-list__title">Girls or Boys Haircut</h3>
@@ -228,9 +250,15 @@
             <p class="treatment-list__summary">Gentle first cuts and tidy trims for little ones, at a relaxed and friendly pace.</p>
           </div>
         </div>
-
-        <h2 style="margin-top: var(--space-2xl);">Men</h2>
-        <div class="treatment-list">
+          </div>
+        </div>
+        <div class="accordion__item">
+          <button class="accordion__trigger" aria-expanded="false">
+            Men
+            <svg class="accordion__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><line class="accordion__icon-vertical" x1="12" y1="5" x2="12" y2="19"></line></svg>
+          </button>
+          <div class="accordion__content">
+            <div class="treatment-list">
           <div class="treatment-list__item">
             <div class="treatment-list__head">
               <h3 class="treatment-list__title">Men's Haircut</h3>
@@ -246,9 +274,15 @@
             <p class="treatment-list__summary">The same considered men's cut at a reduced rate for clients aged 60 and over.</p>
           </div>
         </div>
-
-        <h2 style="margin-top: var(--space-2xl);">Hair Treatments</h2>
-        <div class="treatment-list">
+          </div>
+        </div>
+        <div class="accordion__item">
+          <button class="accordion__trigger" aria-expanded="false">
+            Hair Treatments
+            <svg class="accordion__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><line class="accordion__icon-vertical" x1="12" y1="5" x2="12" y2="19"></line></svg>
+          </button>
+          <div class="accordion__content">
+            <div class="treatment-list">
           <div class="treatment-list__item">
             <div class="treatment-list__head">
               <h3 class="treatment-list__title">Hair Mask Treatment</h3>
@@ -257,9 +291,15 @@
             <p class="treatment-list__summary">A nourishing boost to leave hair softer, glossier and easier to manage &mdash; lovely paired with any colour service.</p>
           </div>
         </div>
-
-        <h2 style="margin-top: var(--space-2xl);">Senior (60+) Rates</h2>
-        <p class="section-subtitle" style="margin-top: 0;">Reduced rates on colour, cuts and blow-dries for clients aged 60 and over.</p>
+          </div>
+        </div>
+        <div class="accordion__item">
+          <button class="accordion__trigger" aria-expanded="false">
+            Senior (60+) Rates
+            <svg class="accordion__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><line class="accordion__icon-vertical" x1="12" y1="5" x2="12" y2="19"></line></svg>
+          </button>
+          <div class="accordion__content">
+            <p class="section-subtitle" style="margin-top: 0;">Reduced rates on colour, cuts and blow-dries for clients aged 60 and over.</p>
         <div class="treatment-list">
           <div class="treatment-list__item">
             <div class="treatment-list__head">
@@ -317,6 +357,9 @@
             </div>
             <p class="treatment-list__summary">A fresh, salon-quality blow-dry, at the senior rate.</p>
           </div>
+        </div>
+          </div>
+        </div>
         </div>
 
         <div class="text-center" style="margin-top: var(--space-2xl);">
@@ -400,6 +443,7 @@
           <a href="services.html" class="footer__link">Services</a>
           <a href="gallery.html" class="footer__link">Gallery</a>
           <a href="pricing.html" class="footer__link">Pricing</a>
+          <a href="reviews.html" class="footer__link">Reviews</a>
           <a href="contact.html" class="footer__link">Contact</a>
         </div>
       </div>
