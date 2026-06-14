@@ -152,3 +152,16 @@ h3 em,
   border-color: var(--color-secondary-light);
   color: var(--color-text-heading);
 }
+
+/* Hero showcase: breathing room between the tick-points and the buttons
+   (the ticks sit directly above the actions and were cramped). */
+.hero--showcase .hero__ticks {
+  margin-bottom: var(--space-lg);
+}
+
+/* Products / accreditation logo bar — keep brand logos tidy and tonal */
+.trust-bar__logo {
+  max-height: 38px;
+  width: auto;
+  opacity: 0.85;
+}
