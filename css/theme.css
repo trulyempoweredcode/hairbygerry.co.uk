@@ -180,11 +180,61 @@ h3 em,
   color: #ff9da6;
 }
 
+/* ---------------------------------------------
+   LIGHT FROST HERO CARD (homepage)
+   The frosted card sits on the calmer right side over the brick, with the
+   photo shown at full vibrancy (no overlay) so the colour work pops.
+   The pale card supplies its own contrast, so the text-over-photo shadow
+   is dropped — it ghosted darkly behind the transparent-filled gradient em
+   and muddied it. The teal->pink emphasis is deepened so it reads on the
+   pale card, and the card is nudged a touch more opaque over the bright,
+   textured brick. */
+.hero--showcase-light .hero__heading,
+.hero--showcase-light .hero__text {
+  text-shadow: none;
+}
+.hero--showcase-light .hero__content {
+  background: rgba(255, 255, 255, 0.8);
+}
+/* Keep the hero Book CTA gold (with charcoal text for AA) so it matches the
+   gold nav Book button right above it and the site-wide CTA — the frost-light
+   default recolours .btn--primary to forest green, which would clash. */
+.hero--showcase-light .btn--primary {
+  background-color: var(--color-secondary);
+  border-color: var(--color-secondary);
+  color: var(--color-text-heading);
+}
+.hero--showcase-light .btn--primary:hover {
+  background-color: var(--color-secondary-light);
+  border-color: var(--color-secondary-light);
+  color: var(--color-text-heading);
+}
+.hero--showcase-light .hero__heading em {
+  background: linear-gradient(90deg, #1f9bb0 0%, #d65a86 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: #d65a86;
+}
+
 /* Widen the image-right hero so the heading + the 3 tick-pills sit on tidy rows */
 @media (min-width: 768px) {
   .hero--image-right .hero__content { max-width: 860px; }
   .hero--image .hero__heading { font-size: 3rem; }
   .hero--image .hero__ticks { flex-wrap: nowrap; }
+}
+
+/* Frost card sizing: hold the heading at the approved 3rem (the theme scales
+   H1 to 3.4rem for Cormorant, which gets cramped in the 600px card) and stack
+   the three trust ticks vertically — three across overflows the card and a
+   2-then-1 wrap leaves a lone tick. Right-aligned to match the right card. */
+@media (min-width: 768px) {
+  .hero--showcase .hero__heading { font-size: 3rem; }
+  .hero--showcase .hero__ticks {
+    flex-direction: column;
+    gap: var(--space-xs);
+  }
+  .hero--showcase-right .hero__ticks { align-items: flex-end; }
 }
 
 /* Full-bleed split images sit edge-to-edge: square corners, no drop shadow */
