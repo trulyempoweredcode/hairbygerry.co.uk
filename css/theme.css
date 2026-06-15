@@ -16,7 +16,7 @@
   --color-primary: #2D4A3E;
   --color-primary-light: #3D6655;
   --color-primary-dark: #1A3028;
-  --color-secondary: #B8860B;        /* antique brass — decorative use (hairlines, icons, borders) */
+  --color-secondary: #e9b544;        /* brass/gold — decorative use (hairlines, icons, borders) */
   --color-secondary-light: #D4A832;
   --color-secondary-dark: #8B6508;   /* darker brass — safe for large text / emphasis */
   --color-accent: #6B3A5D;           /* plum spark — nods to his pink/purple colour work */
@@ -196,6 +196,11 @@ h3 em,
 .hero--showcase-light .hero__content {
   background: rgba(255, 255, 255, 0.8);
 }
+/* Body copy: 17px and no width cap, so it fills the wider card */
+.hero--showcase .hero__text {
+  font-size: 17px;
+  max-width: none;
+}
 /* Keep the hero Book CTA gold (with charcoal text for AA) so it matches the
    gold nav Book button right above it and the site-wide CTA — the frost-light
    default recolours .btn--primary to forest green, which would clash. */
@@ -225,16 +230,54 @@ h3 em,
 }
 
 /* Frost card sizing: hold the heading at the approved 3rem (the theme scales
-   H1 to 3.4rem for Cormorant, which gets cramped in the 600px card) and stack
-   the three trust ticks vertically — three across overflows the card and a
-   2-then-1 wrap leaves a lone tick. Right-aligned to match the right card. */
+   H1 to 3.4rem for Cormorant, which gets cramped) and widen the card so the
+   three trust ticks sit on a single row (right-aligned via the -right variant). */
 @media (min-width: 768px) {
   .hero--showcase .hero__heading { font-size: 3rem; }
-  .hero--showcase .hero__ticks {
-    flex-direction: column;
-    gap: var(--space-xs);
+  .hero--showcase .hero__content { max-width: 650px; }
+  .hero--showcase .hero__ticks { flex-wrap: nowrap; }
+}
+
+/* --- Mobile: stack the hero — photo as a ~400px banner, text below it ---
+   The desktop layout floats a frosted card over the photo; on a phone that
+   crops the colour work and crams the text. Instead, show Hair-1.jpg as a
+   400px banner at the top (the transparent nav still floats over it) and drop
+   the text underneath as a plain block on the cream background — no frost is
+   needed with no photo behind it. NOTE: the banner image URL is hardcoded
+   here because the section photo is set via an inline background-image; keep
+   this in sync if the hero image ever changes. */
+@media (max-width: 767px) {
+  .hero--showcase {
+    display: block;
+    min-height: 0;
+    padding: 0;
+    background-image: none !important;   /* drop the full-bleed inline photo */
+    background-color: var(--color-bg);
   }
-  .hero--showcase-right .hero__ticks { align-items: flex-end; }
+  body:has(.nav--transparent) .hero--showcase { padding-top: 0; }
+
+  .hero--showcase::before {
+    content: "";
+    display: block;
+    height: 400px;
+    background-image: url('../images/Hair-1.jpg');
+    background-size: cover;
+    background-position: center 30%;
+    background-repeat: no-repeat;
+  }
+
+  .hero--showcase .hero__inner {
+    padding: var(--space-xl) var(--space-md);
+  }
+
+  .hero--showcase-light .hero__content {
+    background: transparent;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    padding: 0;
+    max-width: 100%;
+    text-align: left;
+  }
 }
 
 /* Full-bleed split images sit edge-to-edge: square corners, no drop shadow */
