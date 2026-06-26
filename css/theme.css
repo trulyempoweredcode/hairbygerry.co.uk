@@ -323,3 +323,37 @@ h3 em,
   font-size: var(--text-xl);
 }
 .pricing-accordion .treatment-list { margin-top: var(--space-sm); }
+
+/* ---------------------------------------------
+   DARK INLINE-CTA CONTRAST  (About page: "Ready to book with Gerry?")
+   The .cta-inline--dark panel has a forest-green gradient background. On it,
+   two things disappeared: (1) the inline prose links were caught by the
+   framework rule `main p a:not([class])` which paints them --color-primary
+   (forest green) on the forest-green panel, and (2) the Book Online button is
+   a forest-green .btn--primary that merges into the panel. Bring both into
+   line with the rest of the site: gold, underlined links + a gold Book button
+   with a dark charcoal label, so each clearly stands out on the green.
+   The link selector is scoped with the compound .cta-inline.cta-inline--dark
+   (specificity 0,2,2) so it out-ranks the framework's `main p a:not([class])`
+   (0,1,3) — a plain .cta-inline--dark p a (0,1,2) loses to it.
+   (Client feedback 2026-06-26 — links + Book button hard to see on mobile.)
+   --------------------------------------------- */
+.cta-inline.cta-inline--dark p a {
+  color: var(--color-secondary);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  font-weight: 600;
+}
+.cta-inline.cta-inline--dark p a:hover {
+  color: var(--color-text-inverse);
+}
+.cta-inline.cta-inline--dark .btn--primary {
+  background-color: var(--color-secondary);
+  border-color: var(--color-secondary);
+  color: var(--color-text-heading);
+}
+.cta-inline.cta-inline--dark .btn--primary:hover {
+  background-color: var(--color-secondary-light);
+  border-color: var(--color-secondary-light);
+  color: var(--color-text-heading);
+}
