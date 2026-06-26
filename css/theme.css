@@ -266,8 +266,22 @@ h3 em,
     background-repeat: no-repeat;
   }
 
+  /* Neutralise the framework hero grid on mobile. Since template v1.7.4
+     .hero__inner is display:grid with a 1fr track; the grid item's default
+     min-width:auto lets the long heading ("Hair colour you'll love living in")
+     size the track to its un-wrapped max-content (~504px), overflowing the
+     375px screen and clipping the title. Block flow lets the heading wrap. */
   .hero--showcase .hero__inner {
+    display: block;
     padding: var(--space-xl) var(--space-md);
+  }
+
+  /* Let the trust-tick pills wrap on mobile instead of running off-screen.
+     The framework sets white-space:nowrap on these, so the longest tick
+     ("L'Oréal & Vidal Sassoon, and in Advanced Colour Techniques") otherwise
+     overflows the narrow column and is clipped. */
+  .hero--showcase .hero__ticks li {
+    white-space: normal;
   }
 
   .hero--showcase-light .hero__content {
