@@ -1,0 +1,12 @@
+# Every address this site has had. The weekly old-address guard (Ai-Editor scripts/address_guard.py)
+# checks each one still works and forwards it if not. Add lines freely; never remove one.
+# archive: done
+/
+/services.html
+/gallery.html
+/about.html
+/pricing.html
+/contact.html
+/reviews.html
+/cookies-policy.html
+/privacy.html
